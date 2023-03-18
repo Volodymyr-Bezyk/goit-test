@@ -1,5 +1,6 @@
 import React from 'react';
 import Box from 'components/Box';
+import avatarPath from '../../../src/img/Hansel.png';
 
 import {
   CardWrap,
@@ -9,10 +10,8 @@ import {
   TweetsText,
   FollowBtn,
   FollowBtnText,
-  //   InnerWrap,
-  //   BackgroundWrap,
-  //   RectangleWrap,
-  //   AvatarCircleWrap,
+  Circle,
+  Avatar,
 } from './TweetCard.styled';
 
 const TweetCard = () => {
@@ -29,6 +28,10 @@ const TweetCard = () => {
         <FollowBtn type="button">
           <FollowBtnText>Follow</FollowBtnText>
         </FollowBtn>
+
+        <Circle>
+          <Avatar src={avatarPath} alt="avatar" />
+        </Circle>
       </CardWrap>
     </Box>
   );

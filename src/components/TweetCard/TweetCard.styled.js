@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import topBgPath from '../../../src/img/topBg.png';
 import midLinePath from '../../../src/img/midLine.png';
+import circlePath from '../../../src/img/circle.png';
 
 export const CardWrap = styled.article`
   position: relative;
@@ -80,4 +81,33 @@ export const FollowBtnText = styled.span`
   text-align: center;
 
   transition: ${p => p.theme.transitions.bgColor};
+`;
+
+export const Circle = styled.div`
+  position: absolute;
+  top: 178px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 80px;
+  height: 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(${circlePath});
+  background-size: cover;
+  background-position: center;
+  border-radius: ${p => p.theme.radii.round};
+
+  background-color: ${p => p.theme.colors.bg};
+`;
+
+export const Avatar = styled.img`
+  display: block;
+  width: 62px;
+  height: 62px;
+  border-radius: ${p => p.theme.radii.round};
+  overflow: hidden;
 `;

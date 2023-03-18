@@ -3,6 +3,7 @@ const theme = {
     main: '#EBD8FF',
     btnText: '#373737',
     active: '#5CD3A8',
+    bg: '#5736A3',
   },
 
   fontSizes: [8, 10, 12, 14, 16, 18, 20, 24, 32, 48, 64, 72],
