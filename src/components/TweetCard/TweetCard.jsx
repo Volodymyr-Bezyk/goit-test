@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from 'components/Box';
 import avatarPath from '../../../src/img/Hansel.png';
+import { ReactComponent as Logo } from '../../img/Logo.svg';
 
 import {
   CardWrap,
@@ -12,6 +13,7 @@ import {
   FollowBtnText,
   Circle,
   Avatar,
+  LogoWrap,
 } from './TweetCard.styled';
 
 const TweetCard = () => {
@@ -20,6 +22,7 @@ const TweetCard = () => {
       <CardWrap>
         <TopBg />
         <MiddleLine />
+
         <TextWrap>
           <TweetsText>777 tweets</TweetsText>
           <TweetsText>100,500 Followers</TweetsText>
@@ -32,6 +35,10 @@ const TweetCard = () => {
         <Circle>
           <Avatar src={avatarPath} alt="avatar" />
         </Circle>
+
+        <LogoWrap>
+          <Logo />
+        </LogoWrap>
       </CardWrap>
     </Box>
   );

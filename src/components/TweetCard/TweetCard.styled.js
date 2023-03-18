@@ -111,3 +111,9 @@ export const Avatar = styled.img`
   border-radius: ${p => p.theme.radii.round};
   overflow: hidden;
 `;
+
+export const LogoWrap = styled.div`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+`;
