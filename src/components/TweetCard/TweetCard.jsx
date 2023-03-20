@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
 import Box from 'components/Box';
-// import avatarPath from '../../../src/img/Hansel.png';
+import avatarPath from '../../../src/img/Hansel.png';
 import { ReactComponent as Logo } from '../../img/Logo.svg';
 import { amountFormatter } from 'utils/amountFormatter';
-// import { saveFollowersToLocaleStorage } from 'utils/saveFollowersToLocalStorage';
+import { saveFollowingsToLocalStorage } from 'utils/saveFollowingsToLocalStorage';
+import { checkUserFollowing } from 'utils/checkUserFollowing';
 
 import {
   CardWrap,
@@ -22,28 +23,16 @@ import {
 const TweetCard = ({
   user: { id, name, avatar, tweets, followers },
   setFollowers,
+  existingFollows,
 }) => {
-  const [following, setFollowing] = useState(false);
+  const [following, setFollowing] = useState(() =>
+    checkUserFollowing(existingFollows, id)
+  );
 
   const handleFollowing = e => {
-    setFollowers(prevFollowers => {
-      const idx = prevFollowers.findIndex(
-        prevFollower => prevFollower.id === id
-      );
-
-      if (idx === -1) {
-        return [...prevFollowers, { id, following: !following }];
-      } else {
-        const updatedFollowers = prevFollowers.map(follower => {
-          if (follower.id !== id) {
-            return follower;
-          }
-          return { id, following: !following };
-        });
-        return updatedFollowers;
-      }
-    });
-
+    setFollowers(prevFollowers =>
+      saveFollowingsToLocalStorage(prevFollowers, id, following)
+    );
     setFollowing(prevS => !prevS);
   };
 
@@ -72,7 +61,7 @@ const TweetCard = ({
         </FollowBtn>
 
         <Circle>
-          <Avatar src={avatar} alt="avatar" />
+          <Avatar src={avatar || avatarPath} alt="avatar" />
         </Circle>
 
         <LogoWrap>

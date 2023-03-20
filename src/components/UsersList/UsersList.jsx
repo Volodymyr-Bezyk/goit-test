@@ -20,7 +20,11 @@ const UsersList = () => {
     <UsersTweetList>
       {users.map(user => (
         <UsersTweetItem key={user.id}>
-          <TweetCard user={user} setFollowers={setFollowers} />
+          <TweetCard
+            user={user}
+            setFollowers={setFollowers}
+            existingFollows={existingFollows}
+          />
         </UsersTweetItem>
       ))}
     </UsersTweetList>
