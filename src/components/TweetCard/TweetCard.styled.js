@@ -64,7 +64,10 @@ export const FollowBtn = styled.button`
   width: 196px;
   height: 50px;
 
-  background-color: ${p => p.theme.colors.main};
+  background-color: ${p =>
+    p.following ? p.theme.colors.active : p.theme.colors.main};
+
+  transition: ${p => p.theme.transitions.bgColor};
   box-shadow: ${p => p.theme.shadows.btn};
   border-radius: ${p => p.theme.radii.btn};
   border: none;
