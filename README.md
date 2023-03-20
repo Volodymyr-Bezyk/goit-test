@@ -18,7 +18,7 @@ storage.
 стану. Також змінюється і кількість фоловерів. Вона зменшується на 1.
 
 Цей проект можна переглянути за посиланням
-[Tweet cards](https://github.com/Volodymyr-Bezyk/goit-test).
+[Tweet cards](https://volodymyr-bezyk.github.io/goit-test/).
 
 Технічне завдання проекту можна переглянути тут
 [Tweet cards task](https://drive.google.com/file/d/1YJuJ1nhaJv7SRlJLH05OTw08dxW2TQGK/view).
